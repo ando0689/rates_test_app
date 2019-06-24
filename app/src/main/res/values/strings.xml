@@ -23,4 +23,33 @@
     <string name="day_fri">Friday</string>
     <string name="day_sat">Saturday</string>
     <string name="day_sun">Sunday</string>
+
+
+    <array name="sort_orders">
+        <item>DISTANCE_ASC</item>
+        <item>DISTANCE_DESC</item>
+        <item>BUY_ASC</item>
+        <item>BUY_DESC</item>
+        <item>SELL_ASC</item>
+        <item>SELL_DESC</item>
+    </array>
+
+
+    <array name="currencies">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>RUR</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>GBP</item>
+        <item>GEL</item>
+        <item>JPY</item>
+        <item>XAU</item>
+    </array>
+
+    <array name="exchange_type">
+        <item>CASH</item>
+        <item>NON-CASH</item>
+    </array>
 </resources>
