@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Currencies</string>
+
+    <string name="exchange_type_cash">Cash</string>
+    <string name="exchange_type_non_cash">Non-Cash</string>
+
+    <string name="currency_usd">United States dollar</string>
+    <string name="currency_eur">Euro</string>
+    <string name="currency_rur">Russian rouble</string>
+    <string name="currency_aud">Australian dollar</string>
+    <string name="currency_cad">Canadian dollar</string>
+    <string name="currency_chf">Swiss franc</string>
+    <string name="currency_gbp">Great Britain Pound sterling</string>
+    <string name="currency_gel">Georgian lari</string>
+    <string name="currency_jpy">Japanese yen</string>
+    <string name="currency_xau">Gold ounce</string>
+    <string name="currency_unknown">Currency Unknown</string>
+
+    <string name="day_mon">Monday</string>
+    <string name="day_tue">Tuesday</string>
+    <string name="day_wed">Wednesday</string>
+    <string name="day_thu">Thursday</string>
+    <string name="day_fri">Friday</string>
+    <string name="day_sat">Saturday</string>
+    <string name="day_sun">Sunday</string>
+</resources>
