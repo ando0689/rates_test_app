@@ -42,7 +42,7 @@ private fun BranchResponse.toBranch(id: String) = Branch(
     id = id,
     name = title,
     address = address,
-    contacts = contacts.toContacts(),
+    contacts = contacts,
     workDays = workHours.map { it.toWorkDay() },
     location = Location("").apply {
         latitude = location.lat
@@ -68,17 +68,4 @@ private fun WorkHourResponse.toWorkDay(): WorkDay {
 // TODO it might throw exception - deal with it if have time
 private fun String.toWeekDay() = WeekDay.values().find {
         this.toInt() == it.key
-}
-
-//TODO I am sure I have bugs here ))
-private fun String.toContacts(): List<Contact>{
-        val contacts = split(", ")
-        val defaultCode = contacts.getOrNull(0)?.split(")")?.getOrNull(0)?.replace("(", "")
-
-        return contacts.map {
-            Contact(
-                code = defaultCode ?: "",
-                number = it.replace(defaultCode ?: "", "")
-            )
-        }.toList()
 }

@@ -18,7 +18,7 @@ data class Branch(
     val name: Map<String, String>,
     val address: Map<String, String>,
     val location: Location,
-    val contacts: List<Contact>,
+    val contacts: String,
     val workDays: List<WorkDay>
 )
 

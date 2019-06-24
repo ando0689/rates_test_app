@@ -19,8 +19,8 @@
               tools:layout="@layout/bank_details_fragment">
 
         <argument
-            android:name="bankId"
-            app:argType="string"/>
+                android:name="bankId"
+                app:argType="string"/>
 
         <argument
                 android:name="branchId"

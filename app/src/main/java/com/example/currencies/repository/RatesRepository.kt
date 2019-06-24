@@ -3,13 +3,15 @@ package com.example.currencies.repository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.example.currencies.api.*
+import com.example.currencies.api.ApiResponse
+import com.example.currencies.api.ApiSuccessResponse
+import com.example.currencies.api.RatesService
 import com.example.currencies.api.responses.BankDetailsResponse
 import com.example.currencies.api.responses.BankResponse
-import com.example.currencies.repository.datamodels.Bank
-import com.example.currencies.repository.datamodels.Branch
 import com.example.currencies.repository.datamappers.toBanks
 import com.example.currencies.repository.datamappers.toBranches
+import com.example.currencies.repository.datamodels.Bank
+import com.example.currencies.repository.datamodels.Branch
 import com.example.currencies.repository.datamodels.Resource
 import com.example.currencies.repository.datamodels.Status
 import javax.inject.Inject
@@ -20,6 +22,7 @@ class RatesRepository @Inject constructor(val service: RatesService){
 
     var banks = mutableListOf<Bank>()
     var branches = mutableMapOf<String, List<Branch>>()
+
 
     fun getBanksWithRates(forceUpdate: Boolean = false): LiveData<Resource<List<Bank>>> {
         log("RatesRepository -> getBanksWithRates")
