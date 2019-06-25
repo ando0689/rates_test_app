@@ -45,8 +45,8 @@ private fun Bank.toRateListItem(currency: Currency, exchangeType: ExchangeType):
         bankId = id,
         bankName = name,
         bankLogoUrl = logoUrl,
-        nearestBranchId = nearestBranch.id,
-        nearestBranchDistance = nearestBranch.distanceFrom(LocationManager.getCurrentLocation()),
+        nearestBranchId = nearestBranch?.id ?: "",
+        nearestBranchDistance = nearestBranch?.distanceFrom(LocationManager.getCurrentLocation()) ?: -1F,
         rateBuy = rate.buy,
         rateSell = rate.sell
     )

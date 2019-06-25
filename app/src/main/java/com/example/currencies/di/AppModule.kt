@@ -21,8 +21,10 @@ import com.example.currencies.api.RatesService
 import com.example.currencies.util.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
@@ -31,13 +33,25 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideGithubService(): RatesService {
+    fun provideGithubService(okHttpClient: OkHttpClient): RatesService {
         return Retrofit.Builder()
+            .client(okHttpClient)
             .baseUrl("https://rate.am/ws/mobile/v2/") //TODO Api base URL and Version should be separated and put into constants
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build()
             .create(RatesService::class.java)
+    }
+
+
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient().newBuilder()
+            .connectTimeout(40, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
+            .build()
     }
 
 }

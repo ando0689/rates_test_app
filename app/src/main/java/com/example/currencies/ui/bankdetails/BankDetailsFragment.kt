@@ -41,7 +41,12 @@ class BankDetailsFragment : Fragment(), Injectable {
 
         viewModel.bank.observe(this, Observer<Resource<Bank>> {
             when (it.status) {
-                Status.LOADING -> Toast.makeText(context, "Loading", Toast.LENGTH_LONG).show()
+                Status.LOADING -> {
+                    Toast.makeText(context, "Loading", Toast.LENGTH_LONG).show()
+                    it.data?.let { bank ->
+                        initUi(bank)
+                    }
+                }
                 Status.ERROR -> Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_LONG).show()
                 Status.SUCCESS -> it.data?.let { bank ->
                     initUi(bank)

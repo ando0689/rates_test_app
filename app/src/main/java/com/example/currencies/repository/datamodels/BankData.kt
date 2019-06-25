@@ -57,7 +57,7 @@ fun Bank.sortBranchesByDistance(location: Location): List<Branch>{
     return branches
 }
 
-fun Bank.getNearestBranch(location: Location) = sortBranchesByDistance(location)[0]
+fun Bank.getNearestBranch(location: Location) = sortBranchesByDistance(location).getOrNull(0)
 
 fun Bank.getRateFor(currency: Currency, exchangeType: ExchangeType): RateValue?{
     val rateValue = rates.find {
